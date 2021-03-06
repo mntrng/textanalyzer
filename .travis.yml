@@ -10,3 +10,5 @@ deploy:
   provider: heroku
   api_key: $api_key
   app: trungtextanalyzer
+  on:
+    branch: main
