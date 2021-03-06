@@ -14,8 +14,9 @@ app.post("/analyze", (req, res) => {
 })
 
 const textAnalyzer = (text) => {
+    const trimmedText = text.trim()
     const textWithoutSpaces = text.replace(/ /g, "")
-    const words = text.replace(/\s*$/,"")
+    const words = trimmedText.replace(/\s*$/,"")
 
     const occurrences = [...cleanText(textWithoutSpaces)].reduce((dictionary, character) => {
         dictionary[character] = ++dictionary[character] || 1
